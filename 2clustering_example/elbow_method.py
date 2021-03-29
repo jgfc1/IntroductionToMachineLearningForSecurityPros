@@ -7,7 +7,6 @@ from sklearn import metrics
 from scipy.spatial.distance import cdist
 import numpy as np
 
-
 def visualize_elbow(vectors):
     #print(vectors)
     wcss = []
@@ -16,9 +15,9 @@ def visualize_elbow(vectors):
         kmeans.fit(vectors)
         wcss.append(kmeans.inertia_)
     #print(wcss)
-    plt.plot(range(1,30),wcss)
+    plt.plot(range(1,30),wcss,'-ok')
     plt.xlabel("Número de clusters (K)")
-    plt.ylabel("Valor de la función de coste (J)")
+    plt.ylabel("WCSS")
     plt.show()
 
 if __name__ == "__main__":
